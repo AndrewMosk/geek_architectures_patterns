@@ -1,6 +1,8 @@
-package ru.geekbrains;
+package ru.geekbrains.storage.model;
 
 public class User {
+
+    private Long code;
 
     private String name;
 
@@ -20,5 +22,13 @@ public class User {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    public Long getCode() {
+        return code;
+    }
+
+    public void setCode(Long code) {
+        this.code = code;
     }
 }

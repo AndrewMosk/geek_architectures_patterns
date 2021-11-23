@@ -1,29 +1,34 @@
-package ru.geekbrains;
+package ru.geekbrains.storage.model;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Order {
 
-    private long code;
+    private Long code;
 
     private User owner;
 
-    private HashMap<Item, Integer> items;
+    private List<OrderLine> orderLines;
 
-    public long getCode() {
+    private BigDecimal totalSum;
+
+    public Long getCode() {
         return code;
     }
 
-    public void setCode(long code) {
+    public void setCode(Long code) {
         this.code = code;
     }
 
-    public HashMap<Item, Integer> getItems() {
-        return items;
+    public List<OrderLine> getOrderLines() {
+        return orderLines;
     }
 
-    public void setItems(HashMap<Item, Integer> items) {
-        this.items = items;
+    public void setOrderLines(List<OrderLine> orderLines) {
+        this.orderLines = orderLines;
     }
 
     public User getOwner() {
@@ -32,5 +37,13 @@ public class Order {
 
     public void setOwner(User owner) {
         this.owner = owner;
+    }
+
+    public BigDecimal getTotalSum() {
+        return totalSum;
+    }
+
+    public void setTotalSum(BigDecimal totalSum) {
+        this.totalSum = totalSum;
     }
 }
