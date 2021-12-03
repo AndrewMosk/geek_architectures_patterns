@@ -1,6 +1,6 @@
-package ru.geekbrains.authentification;
+package ru.geekbrains.authentification.chain;
 
 public interface Validator {
 
-    void validate(LoginProcess loginProcess);
+    boolean validate(LoginProcess loginProcess);
 }

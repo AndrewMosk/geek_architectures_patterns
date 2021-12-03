@@ -1,4 +1,4 @@
-package ru.geekbrains.authentification;
+package ru.geekbrains.authentification.chain;
 
 public enum LoginProcessState {
     CREDENTIAL, ROLE
