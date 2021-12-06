@@ -2,7 +2,7 @@ package ru.geekbrains.shop.model.dto;
 
 import java.math.BigDecimal;
 
-public class ItemDto {
+public class ItemView {
 
     private Long code;
 
@@ -10,7 +10,7 @@ public class ItemDto {
 
     private BigDecimal price;
 
-    private ItemDto(ItemBuilder builder) {
+    private ItemView(ItemBuilder builder) {
         this.name = builder.name;
         this.price = builder.price;
     }
@@ -63,8 +63,8 @@ public class ItemDto {
             return this;
         }
 
-        public ItemDto build() {
-            return new ItemDto(this);
+        public ItemView build() {
+            return new ItemView(this);
         }
     }
 }
