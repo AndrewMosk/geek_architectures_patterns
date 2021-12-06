@@ -1,40 +1,16 @@
 package ru.geekbrains.storage.model;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 
+@Data
 public class Item {
 
-    private Long code;
+    private final Long code;
 
-    private String name;
+    private final String name;
 
-    private BigDecimal price;
+    private final BigDecimal price;
 
-    public Long getCode() {
-        return code;
-    }
-
-    public void setCode(long code) {
-        this.code = code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCode(Long code) {
-        this.code = code;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
 }

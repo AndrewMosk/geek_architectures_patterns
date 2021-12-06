@@ -1,4 +1,7 @@
-package ru.geekbrains.shop.model.dto;
+package ru.geekbrains.shop.model;
+
+import lombok.Builder;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
