@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  description: "Shop API"
+  version: "0.0.1"
+  title: "Title"
+tags:
+  - name: "item"
+    description: "Items in cart"
+servers:
+  - url: http://localhost:8000/
+    description: "local host"
+paths:
+  /cart/item/{id}:
+    get:
+      tags:
+        - "item"
+      summary: "Get item from cart by id"
+      operationId: "getItemById"
+      parameters:
+        - name: "id"
+          in: "path"
+          description: "retrieves item by id"
+          required: true
+          schema:
+            type: "integer"
+            format: "long"
+      responses:
+        200:
+          description: "Retrieves item by id"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                $ref: '#/components/schemas/Item'
+components:
+  schemas:
+    Item:
+      type: "object"
+      required:
+        - "code"
+        - "name"
+        - "price"
+      properties:
+        code:
+          type: "integer"
+          format: "long"
+        name:
+          type: "string"
+          example: "item"
+        price:
+          type: "integer"
+          example: "BigDecimal"
