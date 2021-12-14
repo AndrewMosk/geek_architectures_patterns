@@ -1,24 +1,33 @@
 package ru.geekbrains.shop.service;
 
-import org.springframework.stereotype.Service;
-import ru.geekbrains.shop.model.ItemView;
 import ru.geekbrains.storage.model.Item;
 import ru.geekbrains.storage.repository.ItemRepository;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class ItemServiceImplementation implements ItemService {
+public class ItemServiceImplementationCache implements ItemService {
 
     @Resource
     private ItemRepository itemRepository;
 
+    private final HashMap<Long, Item> cache;
+
+    public ItemServiceImplementationCache() {
+        cache = new HashMap<>();
+    }
+
     @Override
     public Optional<Item> findItemById(Long id) {
-        return itemRepository.findById(id);
+        if (cache.containsKey(id)) {
+            return Optional.ofNullable(cache.get(id));
+        }
+        Optional<Item> item = itemRepository.findById(id);
+        item.ifPresent(value -> cache.put(id, value));
+        return item;
     }
 
     @Override
