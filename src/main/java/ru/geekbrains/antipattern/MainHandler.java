@@ -1,4 +1,4 @@
-package com.geekbrains.geek.cloud.server;
+package ru.geekbrains.antipattern;
 
 import com.geekbrains.geek.cloud.common.*;
 import io.netty.channel.ChannelHandlerContext;

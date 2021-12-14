@@ -1,4 +1,4 @@
-package com.geekbrains.geek.cloud.client;
+package ru.geekbrains.antipattern;
 
 import com.geekbrains.geek.cloud.common.*;
 import javafx.event.ActionEvent;
@@ -17,7 +17,10 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 public class MainController implements Initializable {
